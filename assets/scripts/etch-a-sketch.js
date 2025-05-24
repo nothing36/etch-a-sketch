@@ -3,6 +3,7 @@ const squareSize = "calc(100vh - 40px)";
 let isSquare = false;
 let itemSize = 100 / boardLen
 let fillColor = "red"
+let rainbow = false
 const container = document.querySelector(".container")
 const toolbar = document.querySelector(".toolbar");
 
@@ -37,9 +38,24 @@ function toggleShape() {
     }
 }
 
+// create random colors for rainbow effect
+function getRandomColor() {
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
+
+  return `rgb(${red}, ${green}, ${blue})`
+}
+
 // hover functionality
 container.addEventListener("mouseover", function(event) {
     const hoverElement = event.target
+
+    // if rainbow effect is on, change color
+    if (rainbow) {
+      fillColor = getRandomColor()
+    }
+    
     hoverElement.style.backgroundColor = fillColor;
 })
 
@@ -56,15 +72,19 @@ toolbar.addEventListener('click', function(event) {
         toggleShape()
         break
       case "btnRainbow":
+        rainbow = true
         break
       case "btnRed":
         fillColor = "red"
+        rainbow = false
         break
       case "btnGreen":
         fillColor = "green"
+        rainbow = false
         break
       case "btnBlue":
         fillColor = "blue"
+        rainbow = false
         break
     }
   }
