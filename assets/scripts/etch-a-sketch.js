@@ -21,7 +21,7 @@ function toggleShape() {
         container.style.width = squareSize
         isSquare = true;
     } else {
-        container.style.height = "100vh"
+        container.style.height = "calc(100vh - 25px)"
         container.style.width = "100vw"
         isSquare = false;
     }
