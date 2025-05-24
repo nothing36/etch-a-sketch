@@ -1,4 +1,4 @@
-const boardLen = 50
+const boardLen = 100
 const squareSize = "800px";
 let isSquare = false;
 let itemSize = 100 / boardLen
@@ -26,3 +26,9 @@ function toggleShape() {
         isSquare = false;
     }
 }
+
+// hover functionality
+container.addEventListener("mouseover", function(event) {
+    const hoverElement = event.target
+    hoverElement.style.backgroundColor = "black";
+})
