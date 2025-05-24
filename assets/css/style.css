@@ -13,13 +13,13 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
-    height: calc(100vh - 25px);
+    height: calc(100vh - 40px);
     width: 100vw;
     text-align: center;
 }
 
 .toolbar {
-    height: 25px;
+    height: 40px;
     width: 100vw;
     display: flex;
     justify-content: space-between;
@@ -34,3 +34,28 @@ body {
     margin-right: 5px;
 }
 
+.leftTool {
+    width: 100px;
+    height: 30px;
+}
+
+.rightTool {
+    height: 30px;
+    width: 30px;
+}
+
+#btnRainbow {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
+#btnRed {
+    background-color: red;
+}
+
+#btnGreen {
+    background-color: green;
+}
+
+#btnBlue {
+    background-color: blue;
+}

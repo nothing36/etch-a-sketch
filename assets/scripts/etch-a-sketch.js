@@ -1,8 +1,9 @@
 const boardLen = 100
-const squareSize = "800px";
+const squareSize = "calc(100vh - 40px)";
 let isSquare = false;
 let itemSize = 100 / boardLen
 const container = document.querySelector(".container")
+const toolbar = document.querySelector(".toolbar");
 
 // fill window with boxes on load
 window.onload = (event) => {
@@ -21,7 +22,7 @@ function toggleShape() {
         container.style.width = squareSize
         isSquare = true;
     } else {
-        container.style.height = "calc(100vh - 25px)"
+        container.style.height = "calc(100vh - 40px)"
         container.style.width = "100vw"
         isSquare = false;
     }
@@ -31,4 +32,18 @@ function toggleShape() {
 container.addEventListener("mouseover", function(event) {
     const hoverElement = event.target
     hoverElement.style.backgroundColor = "black";
+})
+
+// toolbar functionality
+toolbar.addEventListener('click', function(event) {
+  const btnClicked = event.target;
+
+  if (btnClicked) {
+    switch (btnClicked.id) {
+      case "btnNewGrid":
+        break
+      case "btnShape":
+        toggleShape()
+    }
+  }
 })
